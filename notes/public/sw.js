@@ -2,15 +2,7 @@
 var cacheName = "v2";
 
 // Default files to always cache
-var cacheFiles = [
-  "/",
-  "/static",
-  "./",
-  "./index.html",
-  "./script.js",
-  "./css/App.css",
-  "./css/index.css",
-];
+var cacheFiles = ["./index.html", "./script.js", "./style.css"];
 
 const urlsToCache = ["index.html", "offline.html"];
 
@@ -23,7 +15,7 @@ self.addEventListener("install", function (e) {
     caches.open(cacheName).then(function (cache) {
       // Add all the default files to the cache
       console.log("[ServiceWorker] Caching cacheFiles");
-      return cache.addAll(urlsToCache);
+      return cache.addAll(cacheFiles);
     })
   ); // end e.waitUntil
 });
