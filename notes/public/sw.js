@@ -3,6 +3,7 @@ var cacheName = "v2";
 
 // Default files to always cache
 var cacheFiles = [
+  "/",
   "./",
   "./index.html",
   "./script.js",
@@ -10,7 +11,7 @@ var cacheFiles = [
   "./css/index.css",
 ];
 
-const urlsToCache = ["index.html", "offline-html"];
+// const urlsToCache = ["/", "./static/js/bundle.js", "./script.js", ",.manifest.json"];
 
 self.addEventListener("install", function (e) {
   console.log("[ServiceWorker] Installed");
