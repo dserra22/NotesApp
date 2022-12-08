@@ -23,7 +23,7 @@ self.addEventListener("install", function (e) {
     caches.open(cacheName).then(function (cache) {
       // Add all the default files to the cache
       console.log("[ServiceWorker] Caching cacheFiles");
-      return cache.addAll(cacheFiles);
+      return cache.addAll(urlsToCache);
     })
   ); // end e.waitUntil
 });
