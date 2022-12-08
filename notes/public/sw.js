@@ -12,7 +12,7 @@ var cacheFiles = [
   "./css/index.css",
 ];
 
-// const urlsToCache = ["/", "./static/js/bundle.js", "./script.js", ",.manifest.json"];
+const urlsToCache = ["index.html", "offline.html"];
 
 self.addEventListener("install", function (e) {
   console.log("[ServiceWorker] Installed");
