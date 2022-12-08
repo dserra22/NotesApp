@@ -2,7 +2,7 @@
 var cacheName = "v2";
 
 // Default files to always cache
-var cacheFiles = ["./index.html", "./script.js", "./style.css"];
+var cacheFiles = ["/", "./", "./index.html", "./script.js", "./style.css"];
 
 const urlsToCache = ["index.html", "offline.html"];
 
