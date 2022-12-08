@@ -26,7 +26,7 @@ db.version(3).stores({
 });
 
 db.notes.toArray().then((arr) => {
-  id = arr.length;
+  id = Math.trunc(Math.random() * 3000);
 });
 
 // Now add some values.
@@ -48,7 +48,8 @@ function App() {
 
   const allNotes = useLiveQuery(() => db.notes.toArray());
 
-  const [aNote, updateANote] = useState({ title: "", body: "", id: "" });
+  const defaultNote = { title: "", body: "", id: "" };
+  const [aNote, updateANote] = useState(defaultNote);
 
   const openTheModal = () => {
     openModal((prevState) => !prevState);
@@ -76,6 +77,7 @@ function App() {
     let title = form.querySelector("input").value;
     let body = form.querySelector("textarea").value;
     addNoteDatabase({ id: id, title: title, body: body });
+    console.log("added");
   };
 
   const viewNote = (note, e) => {
@@ -94,6 +96,7 @@ function App() {
     } finally {
       console.log("complete");
     }
+    updateANote(defaultNote);
   };
 
   const updateNote = (e) => {
@@ -132,6 +135,7 @@ function App() {
       prevNote.id = aNote.id;
       return { ...prevNote };
     });
+
     openTheUpdateModal((prevState) => !prevState);
   };
   return (
@@ -192,10 +196,10 @@ function App() {
 
         {aNote.title !== "" ? (
           <Paper className="note">
-            <Typography variant="h6" component="h2">
+            <Typography variant="h6" component="h2" className="title">
               {aNote.title}
             </Typography>
-            <Typography sx={{ mt: 2 }}>{aNote.body}</Typography>
+            <p>{aNote.body}</p>
           </Paper>
         ) : (
           <></>

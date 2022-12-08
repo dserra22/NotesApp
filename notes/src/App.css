@@ -48,8 +48,20 @@
 .note {
   position: absolute;
   top: 5%;
+  left: 5%;
   border-radius: 10%;
   border: 5px solid black;
-  padding: 6.4rem;
-  width: 500px;
+  padding: 1.2rem 6.4rem;
+  width: 250px;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+p {
+  margin-top: 2rem;
+  word-wrap: break-word;
+}
+
+h2 {
+  font-size: 3.2rem !important;
 }
