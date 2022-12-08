@@ -4,6 +4,7 @@ var cacheName = "v2";
 // Default files to always cache
 var cacheFiles = [
   "/",
+  "/static",
   "./",
   "./index.html",
   "./script.js",
